@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.6;
+    background: hsla(315, 32%, 85%, 1);
+    background: linear-gradient(135deg, hsla(315, 32%, 85%, 0.3) 11%, hsla(0, 0%, 100%, 1) 100%);
+    background: -moz-linear-gradient(135deg, hsla(315, 32%, 85%, 0.3) 11%, hsla(0, 0%, 100%, 1) 100%);
+    background: -webkit-linear-gradient(135deg, hsla(315, 32%, 85%, 0.3) 11%, hsla(0, 0%, 100%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E5CDDF", endColorstr="#FFFFFF", GradientType=1 );
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+}
+
+img{
+    width: 100%;
+}
+
+.container{
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 1rem 2rem;
+}
+
+nav{
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+nav .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a{
+    padding: 0 1rem;
+    font-weight: bolder;
+    color: black;
+}
+
+nav a:hover{
+    color:blue;
+    font-weight: bolder;
+}
+
+.nav-list{
+    display: flex;
+}
+
+/* Showcase Section */
+
+.showcase .container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 10px;
+}
+
+.left-grid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+}
+
+.showcase h2{
+font-size: 3rem;
+margin-bottom: 1rem;
+font-weight: bolder;
+}
+
+.showcase p{
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.showcase .btn{
+    background: blue;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.right-grid img{
+    width: 80%;
+    margin: 5rem 3px;
+   border: none;
+}
+
+/* Features Section */
+
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1rem;
+}
+
+.features .grid-item{
+    background-color: blue;
+    color: white;
+    padding: 1rem 1.8rem;
+}
+
+.features h3{
+    font-size: 1.6rem;
+    margin-bottom: 7px;
+}
+
