@@ -13,7 +13,8 @@
     <nav>
         <div class="container">
             <div class="logo">
-                <img class="logo" src="./images/logo.svg" alt="logo"/>
+                <a href="index.html"><img class="logo" src="./images/logo.svg" alt="logo"/></a>
+                
             </div>
             <div>
                 <ul class="nav-list">
@@ -31,6 +32,48 @@
      <h2 class="title">Make the smart financial decision always</h2>
      <p class="text">Finiviserr is a finance calculator that gives savings, loans and investments based on the users income</p>
      <button class="btn">Get started, it's free</button>
+     <br>
+     <!-- reviews carousel -->
+     <div class="carousel">
+    <div class="carousel-item carousel-item-visible">
+        <div class="carousel-inner">
+            <div>
+                <img src="./images/user1.png" alt="user-review"/>
+            </div>
+                <div>
+                    <h4 class="title">Ezekiel Samuel</h4>
+                    <p class="text">Lead marketing at Evolve group</p> 
+                </div> 
+            </div>
+        
+            <div>
+            <p style="padding-left: 13px;margin-top: 14px;">Get your own channel page and customize the way you want with your photos, questions and more</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="carousel-inner">
+                <div>
+                    <img src="./images/user1.png" alt="user-review"/>
+                </div>
+                    <div>
+                        <h4 class="title">Ezekiel Samuel2</h4>
+                        <p class="text">Lead marketing at Evolve group</p> 
+                    </div> 
+                </div>
+            
+                <div>
+                <p style="padding-left: 13px;margin-top: 14px;">Get your own channel page and customize the way you want with your photos, questions and more</p>
+                </div>
+            </div>
+
+       
+            <div class="carousel-buttons">
+                <button id="carousel_button--prev" aria-label="Previous slide"><<</button>
+                <button id="carousel_button--next" aria-label="Next slide">>></button>
+
+            </div>
+        </div>
     </div>
     <div class="right-grid">
     <img src="./images/showcase-img.png" alt="showcase"/>
@@ -38,21 +81,26 @@
     </div>
 </section>
 
+
+
 <!-- Features -->
 <section class="features">
     <div class="container">
         <div class="grid-item loan-calculator">
            
-        <h3 class="title"><i class="fas fa-money-check-alt"></i> &nbsp; Loan Calculator</h3>
+        <h3 class="title"><i class="fas fa-money-check-alt"></i> Loan Calculator <a href="loancalc.html"><i class="fas fa-angle-double-right"></i></a></h3>
+        
+        
         <p class="text">Finiviserr is a finance calculator that gives savings, loans and investments based on the users income.</p>
         </div>
         <div class="grid-item savings-calculator">
-            <h3 class="title"><i class="fas fa-wallet"></i> &nbsp; Savings Calculator</h3>
+        <h3 class="title"><i class="fas fa-wallet"></i> Savings Calculator <a href="savingcalc.html"><i class="fas fa-angle-double-right"></i></a></h3>
+        
         <p class="text">Finiviserr is a finance calculator that gives savings, loans and investments based on the users income.</p>
         </div>
         <div class="grid-item investment-calculator">
-           
-            <h3 class="title"> <i class="fas fa-comments-dollar"></i> &nbsp; Investment Calculator</h3>
+        <h3 class="title"> <i class="fas fa-comments-dollar"></i> Investment Calculator <a href="investcalc.html"><i class="fas fa-angle-double-right"></i></a></h3>
+        
         <p class="text">Finiviserr is a finance calculator that gives savings, loans and investments based on the users income.</p>
         </div>
         
@@ -60,5 +108,7 @@
 
 </section>
 
+
+<script src="app.js"></script>
 </body>
 </html>

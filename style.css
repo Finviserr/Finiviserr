@@ -105,22 +105,123 @@ font-weight: bolder;
    border: none;
 }
 
+.carousel {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 440px;
+    background-color: rgb(250, 237, 249);
+    border-radius: 4px;
+    position: relative;
+}
+
+.carousel .carousel-item,
+.carousel .carousel-item-hidden {
+  display: none;
+}
+
+.carousel .carousel-item-visible {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    animation: fadeVisibility 0.5s;
+  }
+
+  .carousel .carousel-inner{
+      display: flex;
+
+  }
+
+.carousel img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    margin-right: 12px;
+}
+
+.carousel p{
+    font-size: 0.9rem;
+}
+
+.carousel .carousel-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: absolute;
+    top: 46%;
+    transform: translateY(-50%);
+  }
+
+.carousel .carousel-buttons button{
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.carousel .carousel-buttons button#carousel__button--prev {
+    margin-left: 20px;
+  }
+  
+  .carousel .carousel-buttons button#carousel__button--next {
+    margin-right: 20px;
+  }
+  
+  @keyframes fadeVisibility {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: opacity linear;
+    }
+  }
+
 /* Features Section */
 
 .features .container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 1rem;
+    grid-gap: 0.3rem;
 }
 
 .features .grid-item{
     background-color: blue;
     color: white;
     padding: 1rem 1.8rem;
+    width: 300px;
 }
 
 .features h3{
     font-size: 1.6rem;
     margin-bottom: 7px;
+}
+
+.features a {
+    color: white;
+    cursor: pointer;
+}
+
+
+/* About Page */
+.about .grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 10px;
+    margin-top: 12px;
+}
+
+.about .grid img{
+    width: 90%;
+    height: 400px;
+}
+
+.about h3{
+    text-decoration: underline;
+    font-weight: bolder;
+    font-size: 2rem;
 }
 
