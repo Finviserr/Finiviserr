@@ -24,6 +24,138 @@
         </div>
         </nav>
     
+<!-- Header Section -->
+<header>
+    <div class="container">
+        <div>
+            <h2><a href="loancalc.html">Loan Calculator</a></h2>
+            </div>
+            <div>
+                <h2><a href="savingscalc.html">Savings Calculator</a></h2>
+            </div>
+            <div>
+                <h2><a href="investcalc.html">Investment Calculator</a></h2>
+            </div>
+
+    </div>
+</header>
+
+    <!-- Loan Details -->
+    <section class="loan-calc-details">
+<div class="container">
+    <h1>Loan Calculator</h1>
     
+    <div class="loan-details">
+            <div>
+            <h2>Loan Details</h2>
+            </div>
+            <div>
+            <form class="main">
+                <div class="form-control">
+                    <label for="currency">Currency:</label>
+                    <select id="currency" name="currency">
+                      <option value="dollar">$ USD</option>
+                      
+                    </select>
+                </div>
+                
+                <div class="form-control">
+                    <label for="loan-term">Loan Term</label>
+                    <div class="options">
+                        <select id="loan-term" name="loan-term">
+                            <option class="monthly" value="month">Monthly</option>
+                            </select>
+                            <select id="loan-term" name="loan-term">
+                            <option value="month">1 month</option>
+                            </select>
+                    </div>
+                    
+                </div>
+    
+                <div class="form-control">
+                    <label for="interest-rate">Interest Rate</label>
+                    <input type="text" placeholder="0.0%">
+                </div>
+                
+                
+                <br>
+              
+              
+        </div>
+
+        <div class="loan-details">
+            <div>
+            <h2>Income</h2>
+            </div>
+            <div>
+           
+                <div class="form-control">
+                    <label for="loan-term">Gross Income</label>
+                    <div class="options">
+                        <select id="loan-term" name="loan-term">
+                            <option class="monthly" value="month">Monthly</option>
+                            </select>
+                            <input type="text" placeholder="$ 0.0">
+                        </div>     
+                    </div>
+                
+                    <div class="form-control">
+                    <label for="loan-term">Untaxed Income</label>
+                    <div class="options">
+                        <select id="loan-term" name="loan-term">
+                            <option class="monthly" value="month">Monthly</option>
+                            </select>
+                            <input type="text" placeholder="$ 0.0"> 
+                        </div>
+              
+        </div>
+
+
+        <div class="loan-details">
+            <div>
+            <h2>Expenses</h2>
+            </div>
+            <div>
+           
+                <div class="form-control">
+                    <label for="loan-term">Fixed expenses per month</label>
+                    <div class="options">
+                            <input type="text" placeholder="$ 0.0">
+                        </div>     
+                    </div>
+                
+                    <div class="form-control">
+                    <label for="loan-term">House rent</label>
+                    <div class="options">
+                        <select id="loan-term" name="loan-term">
+                            <option class="Annually" value="annually">Annually</option>
+                            </select>
+                            <input type="text" placeholder="$ 0.0"> 
+                        </div>
+              
+        </div>
+
+
+
+    </form>
+
+<br>
+        <input type="submit" value="Calculate" class="btn-submit">
+       
+    </div>
+    
+
+
+</div>
+
+    </section>
+    
+
 </body>
 </html>
+
+
+
+
+<!-- CURRENCY SELECTOR HELP -->
+<!-- https://codepen.io/jhawthorn/pen/qrPrXV -->

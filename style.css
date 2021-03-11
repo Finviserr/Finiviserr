@@ -10,10 +10,10 @@ body{
     font-family: 'IBM Plex Sans', sans-serif;
     line-height: 1.6;
     background: hsla(315, 32%, 85%, 1);
-    background: linear-gradient(135deg, hsla(315, 32%, 85%, 0.3) 11%, hsla(0, 0%, 100%, 1) 100%);
-    background: -moz-linear-gradient(135deg, hsla(315, 32%, 85%, 0.3) 11%, hsla(0, 0%, 100%, 1) 100%);
-    background: -webkit-linear-gradient(135deg, hsla(315, 32%, 85%, 0.3) 11%, hsla(0, 0%, 100%, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E5CDDF", endColorstr="#FFFFFF", GradientType=1 );
+    background: linear-gradient(180deg, hsla(315, 32%, 85%, 0.3) 11%, hsla(0, 0%, 100%, 1) 100%);
+    background: -moz-linear-gradient(180deg, hsla(315, 32%, 85%, 0.3) 11%, hsla(0, 0%, 100%, 1) 100%);
+    background: -webkit-linear-gradient(180deg, hsla(315, 32%, 85%, 0.3) 11%, hsla(0, 0%, 100%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#e5cddf", endColorstr="#ffffff", GradientType=1 );
 }
 
 a{
@@ -162,12 +162,33 @@ font-weight: bolder;
     height: 40px;
 }
 
-.carousel .carousel-buttons button#carousel__button--prev {
-    margin-left: 20px;
+  .slider-dots {
+    position: absolute;
+    top: 90%;
+    right: 2%;
+    transform: translateY(90%);
+   
+    list-style: none;
+    display: inline-block;
+    padding-left: 0;
+    margin-bottom: 0;
   }
   
-  .carousel .carousel-buttons button#carousel__button--next {
-    margin-right: 20px;
+  .slider-dots li {
+    
+    color: #bbbcbc;
+    display: inline;
+    font-size: 30px;
+    margin-right: 5px;
+  }
+  
+  .slider-dots .active-dot {
+    color: #141414;
+    animation: fadeVisibility 0.5s;
+  }
+
+  .slider-dots li.hidden{
+      color: #bbbcbc;
   }
   
   @keyframes fadeVisibility {
@@ -223,5 +244,84 @@ font-weight: bolder;
     text-decoration: underline;
     font-weight: bolder;
     font-size: 2rem;
+}
+
+/* Loan Calculator Page */
+/* Header Section */
+header .container{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(201, 232, 238);
+    border-radius: 32px;
+}
+
+header a{
+    color: black;
+}
+
+header a:hover, a:focus, a:active{
+    color: blue;
+}
+
+header h2{
+    font-size: 1.2rem;
+}
+
+.loan-details{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+.loan-details h2{
+    font-size: 1.4rem;
+    color: gray;
+    background-color: rgb(172, 165, 165,0.2);
+    border-radius: 20px;
+    padding: 3px 12px;
+   margin: 20px auto;
+}
+
+.form-control{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+}
+
+.form-control label{
+ font-size: 1.2rem;
+ font-weight: bolder;
+margin: 8px 0;
+}
+
+.form-control .options{
+    margin-right:-1px;
+}
+
+.form-control select, input{
+width: 150px;
+margin-bottom: 8px;
+height: 30px;
+border-radius: 5px;
+font-size: 1rem;
+outline: none;
+border: 1px solid rgb(4, 7, 168);
+}
+
+.form-control input::placeholder{
+    float: right;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding-right: 3px;
+}
+
+.btn-submit{
+    font-size: 1.2rem;
+    color: white;
+    background-color: blue;
+    padding: 21px 20px;
+    line-height: 0.2;
+   
+   
 }
 

@@ -1,10 +1,9 @@
 let slidePosition =0;
 const slides = document.getElementsByClassName('carousel-item');
+const li = document.getElementsByClassName('dot')
+console.log(li)
 const totalSlides = slides.length;
 
-
-document.getElementById('carousel_button--next').addEventListener('click', ()=> {moveToNextSlide()});
-document.getElementById('carousel_button--prev').addEventListener('click', ()=> {moveToPrevSlide()});
 
 function updateSlidePosition(){
     
@@ -12,8 +11,15 @@ function updateSlidePosition(){
         slide.classList.remove('carousel-item-visible');
         slide.classList.add('carousel-item-hidden')
     }
+    for(let dot of li){
+        dot.classList.remove('active-dot');
+        dot.classList.add('hidden')
+    }
 
     slides[slidePosition].classList.add('carousel-item-visible')
+    console.log(li[slidePosition])
+    li[slidePosition].classList.remove('hidden')
+    li[slidePosition].classList.add('active-dot')
 }
 
 function moveToNextSlide(){
@@ -21,15 +27,20 @@ function moveToNextSlide(){
         slidePosition = 0;
     } else {
         slidePosition++;
-    }
+    } 
     updateSlidePosition();
+
 }
 
-function moveToPrevSlide(){
-    if(slidePosition === 0){
-        slidePosition = totalSlides -1;
-    } else {
-        slidePosition--;
-    }
-    updateSlidePosition();
-}
+// function moveToPrevSlide(){
+//     if(slidePosition === 0){
+//         slidePosition = totalSlides -1;
+//     } else {
+//         slidePosition--;
+//     }
+//     updateSlidePosition();
+// }
+
+setInterval(()=>{moveToNextSlide()},2000)
+
+
