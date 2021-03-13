@@ -41,6 +41,6 @@ function moveToNextSlide(){
 //     updateSlidePosition();
 // }
 
-setInterval(()=>{moveToNextSlide()},2000)
+setInterval(()=>{moveToNextSlide()},4000)
 
 

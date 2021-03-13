@@ -41,114 +41,131 @@
 </header>
 
     <!-- Loan Details -->
+
+<div class="main-grid">
     <section class="loan-calc-details">
-<div class="container">
-    <h1>Loan Calculator</h1>
-    
-    <div class="loan-details">
-            <div>
-            <h2>Loan Details</h2>
-            </div>
-            <div>
-            <form class="main">
-                <div class="form-control">
-                    <label for="currency">Currency:</label>
-                    <select id="currency" name="currency">
-                      <option value="dollar">$ USD</option>
+        <div class="container">
+            <h1>Loan Calculator</h1>
+            
+            <div class="loan-details">
+                    <div>
+                    <h2>Loan Details</h2>
+                    </div>
+                <div>
+                    <form class="main">
+                        <div class="form-control">
+                            <label for="currency">Currency:</label>
+                            <select id="currency" name="currency">
+                              <option value="dollar">$ USD</option>  
+                            </select>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="loan-term">Loan Term</label>
+                            <div class="options">
+                                <select id="loan-term" name="loan-term">
+                                <option class="monthly" value="month">Monthly</option>
+                                </select>
+                                <select id="loan-term" name="loan-term">
+                                <option value="month">1 month</option>
+                                </select>
+                            </div>
+                        </div>
+            
+                        <div class="form-control">
+                            <label for="interest-rate">Interest Rate</label>
+                            <input type="text" placeholder="0.0%">
+                        </div>
+                         <br>
+                    </div>
+                    <div class="loan-details">
+                    <div>
+                    <h2>Income</h2>
+                    </div>
+                    <div>
+                   
+                        <div class="form-control">
+                            <label for="loan-term">Gross Income</label>
+                            <div class="options">
+                                <select id="loan-term" name="loan-term">
+                                    <option class="monthly" value="month">Monthly</option>
+                                    </select>
+                                    <input type="text" placeholder="$ 0.0">
+                                </div>     
+                            </div>
+                        
+                            <div class="form-control">
+                                <label for="loan-term">Untaxed Income</label>
+                                <div class="options">
+                                <select id="loan-term" name="loan-term">
+                                <option class="monthly" value="month">Monthly</option>
+                                </select>
+                                <input type="text" placeholder="$ 0.0"> 
+                                </div>
+                            </div>
+        
+        
+                        <div class="loan-details">
+                        <div>
+                        <h2>Expenses</h2>
+                        </div>
+                        <div>
+                   
+                        <div class="form-control">
+                            <label for="loan-term">Fixed expenses per month</label>
+                            <div class="options">
+                                    <input type="text" placeholder="$ 0.0">
+                                </div>     
+                            </div>
+                        
+                            <div class="form-control">
+                                <label for="loan-term">House rent</label>
+                                <div class="options">
+                                <select id="loan-term" name="loan-term">
+                                    <option class="Annually" value="annually">Annually</option>
+                                    </select>
+                                    <input type="text" placeholder="$ 0.0"> 
+                                </div>
                       
-                    </select>
-                </div>
-                
-                <div class="form-control">
-                    <label for="loan-term">Loan Term</label>
-                    <div class="options">
-                        <select id="loan-term" name="loan-term">
-                            <option class="monthly" value="month">Monthly</option>
-                            </select>
-                            <select id="loan-term" name="loan-term">
-                            <option value="month">1 month</option>
-                            </select>
+                            </div>
+                            <br>
+                        <input type="submit" value="Calculate" class="btn-submit">
+                    </form> 
                     </div>
-                    
                 </div>
-    
-                <div class="form-control">
-                    <label for="interest-rate">Interest Rate</label>
-                    <input type="text" placeholder="0.0%">
                 </div>
-                
-                
-                <br>
-              
-              
-        </div>
-
-        <div class="loan-details">
-            <div>
-            <h2>Income</h2>
             </div>
-            <div>
-           
-                <div class="form-control">
-                    <label for="loan-term">Gross Income</label>
-                    <div class="options">
-                        <select id="loan-term" name="loan-term">
-                            <option class="monthly" value="month">Monthly</option>
-                            </select>
-                            <input type="text" placeholder="$ 0.0">
-                        </div>     
-                    </div>
-                
-                    <div class="form-control">
-                    <label for="loan-term">Untaxed Income</label>
-                    <div class="options">
-                        <select id="loan-term" name="loan-term">
-                            <option class="monthly" value="month">Monthly</option>
-                            </select>
-                            <input type="text" placeholder="$ 0.0"> 
-                        </div>
-              
-        </div>
-
-
-        <div class="loan-details">
-            <div>
-            <h2>Expenses</h2>
+        </section>
+        
+        <section class="breakdown-grid">
+            <div class="breakdown">
+                <div class="break-title">
+                <h2>Your Breakdown</h2> 
+                </div>
+                <div class="break-details">
+                <div class="detail">
+                <p class="text">You may borrow approximately</p>
+                <p class="borrow-amount" id="borrow-amount">$ 0.00</p>
+                </div>
+                <div class="detail">
+                <p class="text">Weekly repayment</p>
+                <p class="repay-amount" id="repay-amount">$ 0.00</p>
+                </div>
+                <div class="detail">
+                <p class="text">Interest payable on loan</p>
+                <p class="interest-amount" id="interest-amount">$ 0.00</p>
+                </div>
+                <div class="detail disclaimer">
+                <p>Disclaimer: Whilst every effort has been made to ensure the accuracy of this calculator, the results should be used as indication only. They are neither a quote nor a pre-qualification for a loan.</p>
+                </div>
             </div>
-            <div>
-           
-                <div class="form-control">
-                    <label for="loan-term">Fixed expenses per month</label>
-                    <div class="options">
-                            <input type="text" placeholder="$ 0.0">
-                        </div>     
-                    </div>
-                
-                    <div class="form-control">
-                    <label for="loan-term">House rent</label>
-                    <div class="options">
-                        <select id="loan-term" name="loan-term">
-                            <option class="Annually" value="annually">Annually</option>
-                            </select>
-                            <input type="text" placeholder="$ 0.0"> 
-                        </div>
-              
-        </div>
-
-
-
-    </form>
-
-<br>
-        <input type="submit" value="Calculate" class="btn-submit">
-       
-    </div>
-    
-
-
+        </section>
 </div>
 
-    </section>
+        
+    
+
+
     
 
 </body>

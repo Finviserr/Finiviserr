@@ -184,7 +184,7 @@ font-weight: bolder;
   
   .slider-dots .active-dot {
     color: #141414;
-    animation: fadeVisibility 0.5s;
+    animation: fadeVisibility 2s;
   }
 
   .slider-dots li.hidden{
@@ -193,7 +193,7 @@ font-weight: bolder;
   
   @keyframes fadeVisibility {
     0% {
-      opacity: 0;
+      opacity: 0.6;
     }
     100% {
       opacity: 1;
@@ -267,6 +267,11 @@ header h2{
     font-size: 1.2rem;
 }
 
+.main-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
 .loan-details{
     display: flex;
     flex-direction: column;
@@ -320,8 +325,34 @@ border: 1px solid rgb(4, 7, 168);
     color: white;
     background-color: blue;
     padding: 21px 20px;
-    line-height: 0.2;
-   
-   
+    line-height: 0.2;   
+}
+
+/* Loan Calculator -- Breakdown Grid */
+.breakdown-grid{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    border-radius: 3px;
+    padding: 12px 22px;
+}
+
+.break-title{
+    margin-top:-27rem;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+}
+
+.detail{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.disclaimer{
+    color: gray;
 }
 
