@@ -253,6 +253,7 @@ header .container{
     justify-content: space-around;
     background-color: rgb(201, 232, 238);
     border-radius: 32px;
+    
 }
 
 header a{
@@ -338,10 +339,12 @@ border: 1px solid rgb(4, 7, 168);
     min-height: 100vh;
     border-radius: 3px;
     padding: 12px 22px;
+    margin-top: 1.2rem;
 }
 
+
 .break-title{
-    margin-top:-27rem;
+    margin-top:-24rem;
     margin-bottom: 2rem;
     font-size: 1.6rem;
 }
