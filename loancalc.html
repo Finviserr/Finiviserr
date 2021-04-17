@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="style.css">
         <title>Finiviserr</title>
     </head>
-    <body>
+    <body >
        <!--Navbar  -->
        <nav>
         <div class="container">
@@ -61,20 +61,30 @@
                         </div>
                         
                         <div class="form-control">
-                            <label for="loan-term">Loan Term</label>
+                            <label for="loan-term">Loan Amount</label>
                             <div class="options">
-                                <select id="loan-term" name="loan-term">
+                                <input type="text" placeholder="$ 0.0" name="loan-amount" id="loan-amount">
+                                
+                                <!-- <select id="loan-term" name="loan-term">
                                 <option class="monthly" value="month">Monthly</option>
                                 </select>
                                 <select id="loan-term" name="loan-term">
                                 <option value="month">1 month</option>
-                                </select>
+                                </select> -->
+                                <br>
+                              
                             </div>
+                            
+                           
+                        </div>
+                        <div class="form-control">
+                            <label for="loan-months">Loan Term in months</label>
+                            <input type="number" placeholder="1" min="1" name="loan-months" id="loan-months">
                         </div>
             
                         <div class="form-control">
                             <label for="interest-rate">Interest Rate</label>
-                            <input type="text" placeholder="0.0%">
+                            <input type="text" placeholder="0.0%" name="interestRate" id="interestRate">
                         </div>
                          <br>
                     </div>
@@ -83,18 +93,17 @@
                     <h2>Income</h2>
                     </div>
                     <div>
-                   
-                        <div class="form-control">
-                            <label for="loan-term">Gross Income</label>
-                            <div class="options">
-                                <select id="loan-term" name="loan-term">
-                                    <option class="monthly" value="month">Monthly</option>
-                                    </select>
-                                    <input type="text" placeholder="$ 0.0">
+                    <div class="form-control">
+                        <label for="loan-term">Monthly Net Income</label>
+                         <div class="options">
+                            <!-- <select id="loan-term" name="loan-term">
+                                <option class="monthly" value="month">Monthly</option>
+                            </select> -->
+                                <input type="text" placeholder="$ 0.0" name="month-income" id="month-income">
                                 </div>     
                             </div>
                         
-                            <div class="form-control">
+                            <!-- <div class="form-control">
                                 <label for="loan-term">Untaxed Income</label>
                                 <div class="options">
                                 <select id="loan-term" name="loan-term">
@@ -102,23 +111,23 @@
                                 </select>
                                 <input type="text" placeholder="$ 0.0"> 
                                 </div>
-                            </div>
+                            </div> -->
         
         
-                        <div class="loan-details">
+                        <!-- <div class="loan-details">
                         <div>
                         <h2>Expenses</h2>
                         </div>
-                        <div>
+                        <div> -->
                    
-                        <div class="form-control">
+                        <!-- <div class="form-control">
                             <label for="loan-term">Fixed expenses per month</label>
                             <div class="options">
                                     <input type="text" placeholder="$ 0.0">
                                 </div>     
-                            </div>
+                            </div> -->
                         
-                            <div class="form-control">
+                            <!-- <div class="form-control">
                                 <label for="loan-term">House rent</label>
                                 <div class="options">
                                 <select id="loan-term" name="loan-term">
@@ -127,7 +136,7 @@
                                     <input type="text" placeholder="$ 0.0"> 
                                 </div>
                       
-                            </div>
+                            </div> -->
                             <br>
                         <input type="submit" value="Calculate" class="btn-submit">
                     </form> 
@@ -166,7 +175,7 @@
     
 
 
-    
+<script src="loancalc.js"></script>    
 
 </body>
 </html>
