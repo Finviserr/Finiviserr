@@ -63,7 +63,7 @@
                         <div class="form-control">
                             <label for="loan-term">Loan Amount</label>
                             <div class="options">
-                                <input type="text" placeholder="$ 0.0" name="loan-amount" id="loan-amount">
+                                <input type="number" step="0.01" min="0" placeholder="$ 0.00" onkeyup="decimalCheck()" name="loan-amount" id="loan-amount">
                                 
                                 <!-- <select id="loan-term" name="loan-term">
                                 <option class="monthly" value="month">Monthly</option>
@@ -84,22 +84,22 @@
             
                         <div class="form-control">
                             <label for="interest-rate">Interest Rate</label>
-                            <input type="text" placeholder="0.0%" name="interestRate" id="interestRate">
+                            <input type="number" placeholder="0.0%" name="interestRate" id="interestRate" onkeyup="decimalCheckInterest()">
                         </div>
                          <br>
                     </div>
                     <div class="loan-details">
                     <div>
-                    <h2>Income</h2>
+                    <h2 class="hide">Income</h2>
                     </div>
                     <div>
-                    <div class="form-control">
+                    <div class="form-control hide">
                         <label for="loan-term">Monthly Net Income</label>
                          <div class="options">
                             <!-- <select id="loan-term" name="loan-term">
                                 <option class="monthly" value="month">Monthly</option>
                             </select> -->
-                                <input type="text" placeholder="$ 0.0" name="month-income" id="month-income">
+                                <input type="number" placeholder="$ 0.0" name="month-income" id="month-income">
                                 </div>     
                             </div>
                         
@@ -175,7 +175,9 @@
     
 
 
-<script src="loancalc.js"></script>    
+<script src="loancalc.js"></script>   
+
+   
 
 </body>
 </html>

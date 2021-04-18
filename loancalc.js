@@ -5,15 +5,42 @@ const intRate = document.getElementById("interestRate")
 const loanMonths = document.getElementById("loan-months")
 var monthlyPayment;
 
+// The following function limits the loan amt to decimal places
+function decimalCheck(){
+    var dec = document.getElementById('loan-amount').value;
+    if(dec.includes(".")){
+        var res = dec.substring(dec.indexOf(".")+1);
+        var kl = res.split("");
+        if(kl.length > 1){
+         document.getElementById('loan-amount').value=(parseInt(dec * 100) / 
+          100).toFixed(2);
+        }
+      }
+    }
+
+    function decimalCheckInterest(){
+        var int = document.getElementById('interestRate').value;
+        if(int.includes(".")){
+            var res = int.substring(int.indexOf(".")+1);
+            var kl = res.split("");
+            if(kl.length > 1){
+             document.getElementById('interestRate').value=(parseInt(int * 1000) / 
+              1000).toFixed(3);
+            }
+          }
+}
 
 calcBtn.addEventListener("click", function(e){
-    e.preventDefault();
+e.preventDefault();
 var loanValue= loanAmt.value;
 console.log(loanMonths.value)
 monthlyPayment = (loanValue * (intRate*(Math.pow(1 + intRate)),loanMonths))/(Math.pow(1+intRate),loanMonths)-1
-console.log(monthlyPayment)
+console.log(monthlyPayment.toFixed(2))
+
 
 })
+
+
 
   
 
