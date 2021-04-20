@@ -1,3 +1,5 @@
+// import Big from 'big.js';
+
 
 const loanAmt = document.getElementById('loan-amount');
 const calcBtn = document.querySelector(".btn-submit")
@@ -34,13 +36,24 @@ calcBtn.addEventListener("click", function(e){
 e.preventDefault();
 var loanValue= loanAmt.value;
 console.log(loanMonths.value)
-monthlyPayment = (loanValue * (intRate*(Math.pow(1 + intRate)),loanMonths))/(Math.pow(1+intRate),loanMonths)-1
-console.log(monthlyPayment.toFixed(2))
+var interestRateMonthly = (((intRate.value)/100)/12).toFixed(4);
+console.log(interestRateMonthly)
+// monthlyPayment = (loanValue * (intRate*(Math.pow(1 + intRate)),loanMonths))/(Math.pow(1+intRate),loanMonths)-1
+// console.log(monthlyPayment.toFixed(2))
+let s = 1 + Number(interestRateMonthly);
+var x = loanValue * interestRateMonthly * (Math.pow((s),loanMonths.value));
+console.log(Math.pow((s),loanMonths.value))
+console.log(s)
+console.log((x))
+var y = ((Math.pow((s),loanMonths.value))-1);
+console.log(y)
 
-
+console.log((x)/(y))
 })
 
-
+//let log10Y = Math.log(1+interestRateMonthly)*loanMonths.value/Math.log(10)
 
   
-
+function getBaseLog(x, y) {
+  return Math.log(y) / Math.log(x);
+}
