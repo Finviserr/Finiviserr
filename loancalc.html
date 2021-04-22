@@ -64,19 +64,16 @@
                             <label for="loan-term">Loan Amount</label>
                             <div class="options">
                                 <input type="number" step="0.01" min="0" placeholder="$ 0.00" onkeyup="decimalCheck()" name="loan-amount" id="loan-amount">
-                                
-                                <!-- <select id="loan-term" name="loan-term">
-                                <option class="monthly" value="month">Monthly</option>
-                                </select>
-                                <select id="loan-term" name="loan-term">
-                                <option value="month">1 month</option>
-                                </select> -->
-                                <br>
-                              
                             </div>
-                            
-                           
                         </div>
+
+                        <div class="form-control">
+                            <label for="loan-term">Monthly Repayment</label>
+                            <div class="options">
+                                <input type="number" step="0.01" min="0" placeholder="$ 0.00" onkeyup="decimalCheck()" name="monthly-repayment" id="monthly-repayment">
+                            </div>
+                        </div>
+
                         <div class="form-control">
                             <label for="loan-months">Loan Term in months</label>
                             <input type="number" placeholder="1" min="1" name="loan-months" id="loan-months">

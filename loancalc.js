@@ -8,6 +8,8 @@ const loanMonths = document.getElementById("loan-months")
 const monthlyRepayAmount = document.getElementById("monthly-repay-amount")
 const monthlyIncome = document.getElementById("month-income")
 const loanResults = document.getElementById('loan-results')
+const monthlyRepayInput = document.getElementById("monthly-repayment")
+const borrowAmount = document.getElementById("borrow-amount")
 
 var monthlyPayment;
 
@@ -23,6 +25,18 @@ function decimalCheck(){
         }
       }
     }
+
+  function decimalCheck(){
+      var dec = document.getElementById('monthly-repayment').value;
+      if(dec.includes(".")){
+          var res = dec.substring(dec.indexOf(".")+1);
+          var kl = res.split("");
+          if(kl.length > 1){
+           document.getElementById('monthly-repayment').value=(parseInt(dec * 100) / 
+            100).toFixed(2);
+          }
+        }
+      }
 
     function decimalCheckInterest(){
         var int = document.getElementById('interestRate').value;
@@ -47,11 +61,21 @@ var y = ((Math.pow((s),loanMonths.value))-1);
 var resultMonthlyPayments = x / y;
 console.log(resultMonthlyPayments)
 
-displayResults(resultMonthlyPayments);
+
+
+// Calculate how much I can Borrow (Loan Amount)
+let a = 1 - (1/Math.pow(s,loanMonths.value));
+console.log(a)
+let b = monthlyRepayInput.value/(interestRateMonthly);
+var amountBorrow = a*b;
+
+console.log(amountBorrow)
+
+displayResults(resultMonthlyPayments,amountBorrow);
 
 })
 
-function displayResults(result){
+function displayResults(result,amountBorrow){
 
 monthlyRepayAmount.innerHTML = `$ ${result.toFixed(3)}`
 
@@ -71,4 +95,7 @@ loanResults.innerHTML= `Caution: <br>We noticed that your monthly repayment is g
                             net monthly income (Given that you're not servicing any other loans or debt).
                             We believe that repaying the loan won't be difficult for you.`
 }
+
+borrowAmount.innerHTML = `$ ${amountBorrow.toFixed(2)}`
+
 }
