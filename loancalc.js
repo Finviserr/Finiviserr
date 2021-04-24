@@ -75,6 +75,22 @@ displayResults(resultMonthlyPayments,amountBorrow);
 
 })
 
+function populate(s1,loanDiv,monthlyRepayDiv){
+
+  var s1 = document.getElementById(s1)
+  var loanDiv =  document.getElementById('loan-amount-div')
+  var monthlyRepayDiv = document.getElementById('monthly-repay-div')
+
+  if(s1.value === 'monthly-repayment'){
+    monthlyRepayDiv.classList.add('hide')
+    loanDiv.classList.remove('hide')
+  }
+  else if(s1.value === 'loan-amount'){
+    monthlyRepayDiv.classList.remove('hide')
+    loanDiv.classList.add('hide')
+  }
+}
+
 function displayResults(result,amountBorrow){
 
 monthlyRepayAmount.innerHTML = `$ ${result.toFixed(3)}`

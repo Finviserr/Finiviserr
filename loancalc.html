@@ -46,13 +46,25 @@
     <section class="loan-calc-details">
         <div class="container">
             <h1>Loan Calculator</h1>
-            
+          
+         
+
+
             <div class="loan-details">
                     <div>
                     <h2>Loan Details</h2>
                     </div>
                 <div>
                     <form class="main">
+                <div class="form-control" style="width: 100%;display: block; margin-bottom: 1.5rem;">
+                    <label>What do you want to achieve?</label>
+                    <select id="select1" name="select1" style="width: 100%;margin-top: 1rem;font-size: 1.1rem;padding: 3px 2px;" onchange="populate('select1','loan-amount-div','monthly-repay-div')">
+                        <option></option>
+                        <option value="monthly-repayment">I want to know my monthly repayment</option>
+                        <option value="loan-amount">I want to know how much I can borrow</option>
+                    </select>
+                </div>
+
                         <div class="form-control">
                             <label for="currency">Currency:</label>
                             <select id="currency" name="currency">
@@ -60,14 +72,14 @@
                             </select>
                         </div>
                         
-                        <div class="form-control">
+                        <div class="form-control" id="loan-amount-div">
                             <label for="loan-term">Loan Amount</label>
                             <div class="options">
                                 <input type="number" step="0.01" min="0" placeholder="$ 0.00" onkeyup="decimalCheck()" name="loan-amount" id="loan-amount">
                             </div>
                         </div>
 
-                        <div class="form-control">
+                        <div class="form-control" id="monthly-repay-div">
                             <label for="loan-term">Monthly Repayment</label>
                             <div class="options">
                                 <input type="number" step="0.01" min="0" placeholder="$ 0.00" onkeyup="decimalCheck()" name="monthly-repayment" id="monthly-repayment">
