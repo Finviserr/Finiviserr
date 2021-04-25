@@ -10,6 +10,8 @@ const monthlyIncome = document.getElementById("month-income")
 const loanResults = document.getElementById('loan-results')
 const monthlyRepayInput = document.getElementById("monthly-repayment")
 const borrowAmount = document.getElementById("borrow-amount")
+const interestPayable = document.getElementById("interest-amount")
+const monthlyRepayOutput = document.getElementById('monthly-repay-amount-output')
 
 var monthlyPayment;
 
@@ -52,26 +54,30 @@ function decimalCheck(){
 
 calcBtn.addEventListener("click", function(e){
 e.preventDefault();
-var loanValue= loanAmt.value;
-var interestRateMonthly = (((intRate.value)/100)/12).toFixed(4);
-// converting the interest rate to number and then increment by 1
-let s = 1 + Number(interestRateMonthly);
-var x = loanValue * interestRateMonthly * (Math.pow((s),loanMonths.value));
-var y = ((Math.pow((s),loanMonths.value))-1);
-var resultMonthlyPayments = x / y;
-console.log(resultMonthlyPayments)
+
+if(!checkRequired([loanAmt,intRate])){
+  var loanValue= loanAmt.value;
+  var interestRateMonthly = (((intRate.value)/100)/12).toFixed(4);
+  // converting the interest rate to number and then increment by 1
+  let s = 1 + Number(interestRateMonthly);
+  var x = loanValue * interestRateMonthly * (Math.pow((s),loanMonths.value));
+  var y = ((Math.pow((s),loanMonths.value))-1);
+  var resultMonthlyPayments = x / y;
+  console.log(resultMonthlyPayments)
+  
+  // Calculate how much I can Borrow (Loan Amount)
+  let a = 1 - (1/Math.pow(s,loanMonths.value));
+  console.log(a)
+  let b = monthlyRepayInput.value/(interestRateMonthly);
+  var amountBorrow = a*b;
+  
+  console.log(amountBorrow)
+  
+  displayResults(resultMonthlyPayments,amountBorrow,intRate, monthlyRepayInput);
+}
 
 
 
-// Calculate how much I can Borrow (Loan Amount)
-let a = 1 - (1/Math.pow(s,loanMonths.value));
-console.log(a)
-let b = monthlyRepayInput.value/(interestRateMonthly);
-var amountBorrow = a*b;
-
-console.log(amountBorrow)
-
-displayResults(resultMonthlyPayments,amountBorrow);
 
 })
 
@@ -91,8 +97,9 @@ function populate(s1,loanDiv,monthlyRepayDiv){
   }
 }
 
-function displayResults(result,amountBorrow){
+function displayResults(result,amountBorrow,intRate,monthlyRepayAmount){
 
+console.log(monthlyRepayAmount.value,"hello")
 monthlyRepayAmount.innerHTML = `$ ${result.toFixed(3)}`
 
 var halfMonthlyIncome = monthlyIncome.value * 0.5;
@@ -104,6 +111,7 @@ loanResults.classList.add('red')
 loanResults.innerHTML= `Caution: <br>We noticed that your monthly repayment is greater than 50% of your
                         net monthly income (Given that you're not servicing any other loans or debt).
                         We would like to suggest, that you go for a loan with lower amount.`
+// interestPayable.innerHTML=`${intRate}`
 
 } else if(result < halfMonthlyIncome){
   loanResults.classList.add('green');
@@ -111,7 +119,37 @@ loanResults.innerHTML= `Caution: <br>We noticed that your monthly repayment is g
                             net monthly income (Given that you're not servicing any other loans or debt).
                             We believe that repaying the loan won't be difficult for you.`
 }
-
 borrowAmount.innerHTML = `$ ${amountBorrow.toFixed(2)}`
-
+monthlyRepayOutput.innerHTML=`$ ${monthlyRepayAmount.value}`
 }
+
+// ERROR HANDLING
+function checkRequired(inputArr){
+let isRequired = false;
+inputArr.forEach(function(input){
+  if(input.value.trim() === ''){
+    showError(input, `Input is required`)
+    isRequired = true;
+  } else {
+    showSuccess(input)
+  }
+})
+}
+
+function showError(input, message){
+  const formControl = input.parentElement;
+  formControl.className  = 'form-control error'
+  const small = formControl.querySelector('small')
+  small.innerText = message;
+}
+
+function showSuccess(input){
+  const formControl =  input.parentElement;
+  formControl.className = 'form-control success'
+}
+
+function getFieldName(input){
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+
+

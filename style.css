@@ -292,6 +292,7 @@ header h2{
     display: flex;
     justify-content: space-between;
     margin-top: 22px;
+    position: relative;
 }
 
 .form-control label{
@@ -302,6 +303,7 @@ margin: 8px 0;
 
 .form-control .options{
     margin-right:-1px;
+    margin-bottom: 3px;
 }
 
 .form-control select, input{
@@ -339,12 +341,12 @@ border: 1px solid rgb(4, 7, 168);
     min-height: 100vh;
     border-radius: 3px;
     padding: 12px 22px;
-    margin-top: 1.4rem;
+    margin-top: 1rem;
 }
 
 
 .break-title{
-    margin-top:-24rem;
+    margin-top:-12rem;
     margin-bottom: 2rem;
     font-size: 1.6rem;
 }
@@ -370,3 +372,23 @@ border: 1px solid rgb(4, 7, 168);
 .green{
     color: green;
 }
+
+.form-control.success input {
+    border-color: #2ecc71;
+  }
+  
+  .form-control.error input {
+    border-color: #e74c3c;
+  }
+  
+  .form-control small {
+    color: #e74c3c;
+    position: absolute;
+    top:-1.4rem;
+    left: 0.3rem;
+    visibility: hidden;
+  }
+  
+  .form-control.error small {
+    visibility: visible;
+  }
