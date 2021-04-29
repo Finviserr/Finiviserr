@@ -1,5 +1,4 @@
-// import Big from 'big.js';
-
+// import Big from 'big.js'
 
 const loanAmt = document.getElementById('loan-amount');
 const calcBtn = document.querySelector(".btn-submit")
@@ -12,6 +11,8 @@ const monthlyRepayInput = document.getElementById("monthly-repayment")
 const borrowAmount = document.getElementById("borrow-amount")
 const interestPayable = document.getElementById("interest-amount")
 const monthlyRepayOutput = document.getElementById('monthly-repay-amount-output')
+const interestPayableOutput = document.getElementById('interest-payable-amount')
+var s1 = document.getElementById('select1')
 
 var monthlyPayment;
 
@@ -52,12 +53,16 @@ function decimalCheck(){
           }
 }
 
+
 calcBtn.addEventListener("click", function(e){
 e.preventDefault();
 
 if(!checkRequired([loanAmt,intRate])){
   var loanValue= loanAmt.value;
   var interestRateMonthly = (((intRate.value)/100)/12).toFixed(4);
+  var monthlyRepayInputValue=monthlyRepayInput.value;
+  var loanMonthsValue= loanMonths.value;
+
   // converting the interest rate to number and then increment by 1
   let s = 1 + Number(interestRateMonthly);
   var x = loanValue * interestRateMonthly * (Math.pow((s),loanMonths.value));
@@ -73,11 +78,57 @@ if(!checkRequired([loanAmt,intRate])){
   
   console.log(amountBorrow)
   
-  displayResults(resultMonthlyPayments,amountBorrow,intRate, monthlyRepayInput);
+if(s1.value === 'monthly-repayment'){
+  displayMonthlyPayments(resultMonthlyPayments,loanValue)
+} else {
+  displayBorrowAmount(amountBorrow,monthlyRepayInputValue)
+}
+
+}
+
+function displayMonthlyPayments(result,loanValue){
+  console.log("Monthly Payments",resultMonthlyPayments)
+  monthlyRepayOutput.innerHTML = `$ ${result.toFixed(2)}`
+  borrowAmount.innerHTML = `$ ${loanValue}`
+
+
+  var halfMonthlyIncome = monthlyIncome.value * 0.5;
+  console.log(halfMonthlyIncome)
+  
+  if(result > halfMonthlyIncome){
+  loanResults.classList.add('red')
+  loanResults.innerHTML= `Caution: <br>We noticed that your monthly repayment is greater than 50% of your
+                          net monthly income (Given that you're not servicing any other loans or debt).
+                          We would like to suggest, that you go for a loan with lower amount.`
+  
+  } else if(result < halfMonthlyIncome){
+    loanResults.classList.add('green');
+    loanResults.innerHTML = `Good to go! <br> We noticed that your monthly repayment is less than 50% of your
+                              net monthly income (Given that you're not servicing any other loans or debt).
+                              We believe that repaying the loan won't be difficult for you.`
+  }
+
+  // Interest Payable Calculation
+var interestPayable = (loanMonthsValue * result) - loanValue;
+interestPayableOutput.innerHTML=`$ ${interestPayable.toFixed(2)}`
+
 }
 
 
+function displayBorrowAmount(amountBorrow,monthlyRepayInputValue){
+  console.log("Borrow Amount",amountBorrow)
+  console.log(monthlyRepayInputValue)
 
+  borrowAmount.innerHTML = `$ ${amountBorrow.toFixed(2)}`
+  monthlyRepayOutput.innerHTML = `$ ${monthlyRepayInputValue}`
+
+  loanResults.innerHTML = `Please note: <br> We advise you not to go beyond
+                          an amount you are comfortable paying back.`
+}
+
+// Interest Payable Calculation
+var interestPayable = (loanMonthsValue * monthlyRepayInputValue) - amountBorrow;
+interestPayableOutput.innerHTML=`$ ${interestPayable.toFixed(2)}`
 
 })
 
@@ -97,31 +148,6 @@ function populate(s1,loanDiv,monthlyRepayDiv){
   }
 }
 
-function displayResults(result,amountBorrow,intRate,monthlyRepayAmount){
-
-console.log(monthlyRepayAmount.value,"hello")
-monthlyRepayAmount.innerHTML = `$ ${result.toFixed(3)}`
-
-var halfMonthlyIncome = monthlyIncome.value * 0.5;
-console.log(monthlyIncome.value)
-console.log(halfMonthlyIncome)
-
-if(result > halfMonthlyIncome){
-loanResults.classList.add('red')
-loanResults.innerHTML= `Caution: <br>We noticed that your monthly repayment is greater than 50% of your
-                        net monthly income (Given that you're not servicing any other loans or debt).
-                        We would like to suggest, that you go for a loan with lower amount.`
-// interestPayable.innerHTML=`${intRate}`
-
-} else if(result < halfMonthlyIncome){
-  loanResults.classList.add('green');
-  loanResults.innerHTML = `Good to go! <br> We noticed that your monthly repayment is less than 50% of your
-                            net monthly income (Given that you're not servicing any other loans or debt).
-                            We believe that repaying the loan won't be difficult for you.`
-}
-borrowAmount.innerHTML = `$ ${amountBorrow.toFixed(2)}`
-monthlyRepayOutput.innerHTML=`$ ${monthlyRepayAmount.value}`
-}
 
 // ERROR HANDLING
 function checkRequired(inputArr){
@@ -148,8 +174,5 @@ function showSuccess(input){
   formControl.className = 'form-control success'
 }
 
-function getFieldName(input){
-  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
-}
 
 
