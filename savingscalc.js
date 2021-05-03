@@ -2,7 +2,9 @@ var s1 = document.getElementById('select1');
 const calcBtn = document.querySelector(".btn-submit");
 const savingsGoal = document.getElementById('savings-goal')
 const interestRate =  document.getElementById('interest-rate')
-const savingsMonths = document.getElementById('savings-duration-months');
+const savingsYears = document.getElementById('savings-duration-years');
+const savingsMonths = document.getElementById('savings-duration-months')
+const savingInterestOutput = document.getElementById('saving-interest-amount')
 
 // The following function limits the savings amt to decimal places
 function decimalCheck(){
@@ -23,10 +25,11 @@ calcBtn.addEventListener("click", function(e){
 e.preventDefault();
 
 let n=12;
-// for now consider savingsMonthsInput = t (i-e time in years)
+// for now consider savingsYearsInput = t (i-e time in years)
 
 var savingsGoalInput = savingsGoal.value;
 var interestRateInput = (interestRate.value)/100;
+var savingsYearsInput = savingsYears.value;
 var savingsMonthsInput = savingsMonths.value;
 
 
@@ -37,11 +40,52 @@ const denominator = (Math.pow((1+ (interestRateInput/n)),(n*savingsMonthsInput))
 console.log(denominator)
 const result = numerator/denominator;
 console.log(result);
-    
+
+// Calculation for Savings Goal (with Interest)
+var resultNoInterest= savingsGoalInput * savingsMonthsInput;
+console.log(resultNoInterest)
+
+   
+if(s1.value === 'monthly-saving-no-interest'){
+  displayResultsNoInterest(resultNoInterest)
+} else if(s1.value === 'monthly-saving-interest'){
+  displayResultsWithInterest(result)
+} else {
+  displayResultFutureInterest(resultFutureInterest)
+}
+
+
 });
 
-function populate(s1){
-console.log("change")
+function populate(s1,intDiv,savingsDurationDiv,savingDurMonthly){
+var s1 = document.getElementById(s1)
+var interestDiv = document.getElementById('interest-rate-div')
+var savingsDurationDiv = document.getElementById("savings-duration-div")
+var savingsDurationMonthly = document.getElementById("savings-duration-div-monthly")
+
+if(s1.value === 'monthly-saving-no-interest'){
+console.log("no interest")
+interestDiv.classList.add('hide')
+savingsDurationDiv.classList.add('hide')
+console.log(savingsDurationDiv)
+
+} else if(s1.value === 'monthly-saving-interest'){
+interestDiv.classList.remove('hide') 
+savingsDurationDiv.classList.remove('hide')
+savingsDurationMonthly.classList.add("hide")
+}
+}
+
+function displayResultsWithInterest(result){
+  savingInterestOutput.innerHTML=`$ ${result.toFixed(2)}`
+}
+
+function displayResultsNoInterest(resultNoInt){
+  savingInterestOutput.innerHTML=`$ ${resultNoInt.toFixed(2)}`
+}
+
+function displayResultFutureInterest(futureResult){
+  console.log("hello future")
 }
 
 
