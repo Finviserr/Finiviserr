@@ -52,11 +52,11 @@
                     <form class="main">
                 <div class="form-control" style="width: 100%;display: block; margin-bottom: 1.5rem;">
                     <label>Select a type</label>
-                    <select id="select1" name="select1" style="width: 100%;margin-top: 1rem;font-size: 1.1rem;padding: 3px 2px;" onchange="populate('select1','interest-rate-div','savings-duration-div','savings-duration-div-monthly')">
+                    <select id="select1" name="select1" style="width: 100%;margin-top: 1rem;font-size: 1.1rem;padding: 3px 2px;" onchange="populate('select1','interest-rate-div','savings-duration-div','savings-duration-div-monthly','savings-amount-div','monthly-payment-div')">
                         <option></option>
                         <option value="monthly-saving-no-interest">How should I save monthly to reach my goal (without interest)</option>
                         <option value="monthly-saving-interest">How should I save monthly to reach my goal (with interest)</option>
-                        <option value="future-saving">What is the future value of my savings</option>
+                        <option value="future-saving">What is the future value of my savings (with interest)</option>
                     </select>
                 </div>
 
@@ -75,8 +75,16 @@
                             </div>
                         </div>
 
+                        <div class="form-control" id="monthly-payment-div">
+                            <label for="monthly-payment">Monthly Payment</label>
+                            <div class="options">
+                                <small>Error message</small>
+                                <input type="number" step="0.01" min="0" placeholder="$ 0.00" onkeyup="decimalCheck()" name="monthly-payment" id="monthly-payment">
+                            </div>
+                        </div>
+
                         <div class="form-control" id="savings-duration-div">
-                            <label for="savings-term">Savings Duration in Years</label>
+                            <label for="savings-term">Savings Duration (Months)</label>
                             <div class="options">
                                 <input type="number" min="1" placeholder="1" onkeyup="decimalCheck()" name="savings-duration-years" id="savings-duration-years">
                             </div>
