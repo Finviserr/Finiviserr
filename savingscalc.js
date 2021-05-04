@@ -30,7 +30,7 @@ let n=12;
 
 var savingsGoalInput = savingsGoal.value;
 var interestRateInput = (interestRate.value)/100;
-var savingsYearsInput = savingsYears.value;
+var savingsYearsInput = (savingsYears.value)/12;
 var savingsMonthsInput = savingsMonths.value;
 var monthlyDepositInput = monthlyDeposit.value;
 
