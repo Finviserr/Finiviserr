@@ -43,8 +43,8 @@ console.log(denominator)
 const result = numerator/denominator;
 console.log(result);
 
-// Calculation for Savings Goal (with Interest)
-var resultNoInterest= savingsGoalInput * savingsMonthsInput;
+// Calculation for Savings Goal (without Interest)
+var resultNoInterest= savingsGoalInput / savingsMonthsInput;
 console.log(resultNoInterest)
 
 // Calculation for Future Value of Savings(with Interest)
