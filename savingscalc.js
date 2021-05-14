@@ -48,7 +48,7 @@ var resultNoInterest= savingsGoalInput / savingsMonthsInput;
 console.log(resultNoInterest)
 
 // Calculation for Future Value of Savings(with Interest)
-const numeratorFuture = monthlyDepositInput * (Math.pow((1+ (interestRateInput/n)),(n*savingsYearsInput)))-1;
+const numeratorFuture = monthlyDepositInput * ((Math.pow((1+ (interestRateInput/n)),(n*savingsYearsInput)))-1);
 const denomFuture =  interestRateInput/n;
 const resultFuture = numeratorFuture / denomFuture;
 
