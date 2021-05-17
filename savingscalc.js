@@ -52,11 +52,17 @@ const numeratorFuture = monthlyDepositInput * ((Math.pow((1+ (interestRateInput/
 const denomFuture =  interestRateInput/n;
 const resultFuture = numeratorFuture / denomFuture;
 
+// Calculation for Future Value of Savings(without Interest)
+var resultFutureNoInterest= monthlyDepositInput * savingsMonthsInput;
+console.log(resultFutureNoInterest)
+
 
 if(s1.value === 'monthly-saving-no-interest'){
   displayResultsNoInterest(resultNoInterest)
 } else if(s1.value === 'monthly-saving-interest'){
   displayResultsWithInterest(result)
+} else if(s1.value === 'future-saving-no-interest'){
+  displayResultsFutureNoInterest(resultFutureNoInterest)
 } else {
   displayResultFutureInterest(resultFuture)
 }
@@ -82,7 +88,14 @@ interestDiv.classList.remove('hide')
 savingsDurationDiv.classList.remove('hide')
 savingsDurationMonthly.classList.add("hide");
 monthlyPaymentDiv.classList.add('hide')
-} else {
+} else if(s1.value === 'future-saving-no-interest'){
+interestDiv.classList.add('hide');
+monthlyPaymentDiv.classList.remove('hide')
+savingsAmountDiv.classList.add('hide')
+savingsDurationDiv.classList.add('hide');
+savingsDurationMonthly.classList.remove("hide");
+}
+else {
 savingsDurationDiv.classList.remove("hide")
 savingsAmountDiv.classList.add('hide')
 savingsDurationMonthly.classList.add("hide") 
@@ -102,6 +115,10 @@ function displayResultsNoInterest(resultNoInt){
 function displayResultFutureInterest(futureResult){
 console.log(futureResult)
 savingInterestOutput.innerHTML=`$ ${futureResult.toFixed(2)}`
+}
+
+function displayResultsFutureNoInterest(result){
+savingInterestOutput.innerHTML=`$ ${result.toFixed(2)}`
 }
 
 

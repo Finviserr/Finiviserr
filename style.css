@@ -216,6 +216,11 @@ font-weight: bolder;
     width: 300px;
 }
 
+.features .grid-item img{
+    width:28px;
+    height:22px;
+}
+
 .features h3{
     font-size: 1.6rem;
     margin-bottom: 7px;
@@ -230,21 +235,31 @@ font-weight: bolder;
 /* About Page */
 .about .grid{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-gap: 10px;
+    grid-template-columns: repeat(3,1fr);
     margin-top: 12px;
 }
 
 .about .grid img{
-    width: 90%;
-    height: 400px;
+    max-width: 100%;
+    width: 75%;
+    height: 220px;
+    border-radius: 50%;
+    text-align: center;
 }
 
 .about h3{
     text-decoration: underline;
     font-weight: bolder;
     font-size: 2rem;
+    margin-bottom: 2rem;
 }
+
+.about .grid-item{
+    width:320px;
+    text-align: center;
+
+}
+
 
 /* Loan Calculator Page */
 /* Header Section */
