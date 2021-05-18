@@ -53,7 +53,7 @@
                 <div class="form-control" style="width: 100%;display: block; margin-bottom: 1.5rem;">
                     <label>Select a type</label>
                     <select id="select1" name="select1" style="width: 100%;margin-top: 1rem;font-size: 1.1rem;padding: 3px 2px;" onchange="populate('select1','interest-rate-div','savings-duration-div','savings-duration-div-monthly','savings-amount-div','monthly-payment-div')">
-                        <option></option>
+
                         <option value="monthly-saving-no-interest">How should I save monthly to reach my goal (without interest)</option>
                         <option value="monthly-saving-interest">How should I save monthly to reach my goal (with interest)</option>
                         <option value="future-saving">What is the future value of my savings (with interest)</option>
@@ -76,7 +76,7 @@
                             </div>
                         </div>
 
-                        <div class="form-control" id="monthly-payment-div">
+                        <div class="form-control hide" id="monthly-payment-div">
                             <label for="monthly-payment">Monthly Payment</label>
                             <div class="options">
                                 <small>Error message</small>
@@ -84,7 +84,7 @@
                             </div>
                         </div>
 
-                        <div class="form-control" id="savings-duration-div">
+                        <div class="form-control hide" id="savings-duration-div">
                             <label for="savings-term">Savings Duration (Months)</label>
                             <div class="options">
                                 <input type="number" min="1" placeholder="1" onkeyup="decimalCheck()" name="savings-duration-years" id="savings-duration-years">
@@ -99,7 +99,7 @@
                         </div>
 
             
-                        <div class="form-control" id="interest-rate-div">
+                        <div class="form-control hide" id="interest-rate-div">
                             <label for="interest-rate">Annual Interest Rate</label>
                             <input type="number" placeholder="0.0%" name="interestRate" id="interest-rate" onkeyup="decimalCheckInterest()">
                             <small style="margin-left: 22rem;">Error message</small>

@@ -77,11 +77,9 @@ var savingsAmountDiv = document.getElementById("savings-amount-div")
 var monthlyPaymentDiv = document.getElementById("monthly-payment-div")
 
 if(s1.value === 'monthly-saving-no-interest'){
-console.log("no interest")
 interestDiv.classList.add('hide')
 savingsDurationDiv.classList.add('hide');
 monthlyPaymentDiv.classList.add('hide')
-console.log(savingsDurationDiv)
 
 } else if(s1.value === 'monthly-saving-interest'){
 interestDiv.classList.remove('hide') 

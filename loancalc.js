@@ -138,7 +138,7 @@ function populate(s1,loanDiv,monthlyRepayDiv){
   var loanDiv =  document.getElementById('loan-amount-div')
   var monthlyRepayDiv = document.getElementById('monthly-repay-div')
 
-  if(s1.value === 'monthly-repayment'){
+  if(s1.value == 'monthly-repayment'){
     monthlyRepayDiv.classList.add('hide')
     loanDiv.classList.remove('hide')
   }
