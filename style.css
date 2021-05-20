@@ -9,11 +9,11 @@
 body{
     font-family: 'IBM Plex Sans', sans-serif;
     line-height: 1.6;
-    background: hsla(315, 32%, 85%, 1);
+    /* background: hsla(315, 32%, 85%, 1);
     background: linear-gradient(180deg, hsla(315, 32%, 85%, 0.3) 11%, hsla(0, 0%, 100%, 1) 100%);
     background: -moz-linear-gradient(180deg, hsla(315, 32%, 85%, 0.3) 11%, hsla(0, 0%, 100%, 1) 100%);
     background: -webkit-linear-gradient(180deg, hsla(315, 32%, 85%, 0.3) 11%, hsla(0, 0%, 100%, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#e5cddf", endColorstr="#ffffff", GradientType=1 );
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#e5cddf", endColorstr="#ffffff", GradientType=1 ); */
 }
 
 a{

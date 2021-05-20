@@ -103,20 +103,20 @@ interestDiv.classList.remove('hide')
 }
 
 function displayResultsWithInterest(result){
-  savingInterestOutput.innerHTML=`$ ${result.toFixed(2)}`
+  savingInterestOutput.innerHTML=`$ ${result.toLocaleString()}`
 }
 
 function displayResultsNoInterest(resultNoInt){
-  savingInterestOutput.innerHTML=`$ ${resultNoInt.toFixed(2)}`
+  savingInterestOutput.innerHTML=`$ ${resultNoInt.toLocaleString()}`
 }
 
 function displayResultFutureInterest(futureResult){
 console.log(futureResult)
-savingInterestOutput.innerHTML=`$ ${futureResult.toFixed(2)}`
+savingInterestOutput.innerHTML=`$ ${futureResult.toLocaleString()}`
 }
 
 function displayResultsFutureNoInterest(result){
-savingInterestOutput.innerHTML=`$ ${result.toFixed(2)}`
+savingInterestOutput.innerHTML=`$ ${result.toLocaleString()}`
 }
 
 

@@ -88,7 +88,7 @@ if(s1.value === 'monthly-repayment'){
 
 function displayMonthlyPayments(result,loanValue){
   console.log("Monthly Payments",resultMonthlyPayments)
-  monthlyRepayOutput.innerHTML = `$ ${result.toFixed(2)}`
+  monthlyRepayOutput.innerHTML = `$ ${result.toLocaleString()}`
   borrowAmount.innerHTML = `$ ${loanValue}`
 
 
@@ -119,7 +119,7 @@ function displayBorrowAmount(amountBorrow,monthlyRepayInputValue){
   console.log("Borrow Amount",amountBorrow)
   console.log(monthlyRepayInputValue)
 
-  borrowAmount.innerHTML = `$ ${amountBorrow.toFixed(2)}`
+  borrowAmount.innerHTML = `$ ${amountBorrow.toLocaleString()}`
   monthlyRepayOutput.innerHTML = `$ ${monthlyRepayInputValue}`
 
   loanResults.innerHTML = `Please note: <br> We advise you not to go beyond
