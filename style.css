@@ -407,3 +407,10 @@ border: 1px solid rgb(4, 7, 168);
   .form-control.error small {
     visibility: visible;
   }
+
+  @media(max-width:768px){
+    .main-grid{
+        display: grid;
+        grid-template-columns:1fr;
+    } 
+  }
