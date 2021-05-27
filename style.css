@@ -231,14 +231,15 @@ font-weight: bolder;
 }
 
 .features a {
-    color: white;
+    color: #04009a;
     cursor: pointer;
 }
 
-.features .icon{
+.icon img{
     height: 120px;
-    width:2px;
+    width:12px;
     padding-left: 12px;
+    
 }
 
 
