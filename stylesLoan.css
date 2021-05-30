@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+ul li{
+    text-decoration: none;
+    list-style: none;
+}
+
+
+body{
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.6;
+}
+
+.container{
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0rem 2rem;
+}
+
+.main-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.first-item{
+    padding-top: 2rem;
+}
+
+.second-item{
+    background-color: black;
+    min-height: 50vh;
+    padding-top: 2rem;
+}
+
+.navbar{
+    width: 60%;
+    float: right;
+}
+
+.navbar ul{
+    display: flex;
+    justify-content:space-around;
+}
+
+/* Header Section */
+
+header .container{
+    max-width: 430px;
+    overflow-x: auto;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(201, 232, 238);
+    border-radius: 32px;
+    margin-top: 22px;
+    margin-left: -2px;
+    
+}
+
+header a{
+    color: black;
+}
+
+header a:hover, a:focus, a:active{
+    color: blue;
+}
+
+header h2{
+    padding: 11px 13px 7px 12px;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+/* Loan Calculator -- Breakdown Grid */
+
+.breakdown-grid{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    border-radius: 3px;
+    padding: 12px 22px;
+    margin-top: 3rem;
+    margin-left: 12px;
+}
+
+
+.break-title{
+    margin-top:-12rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.detail{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.disclaimer{
+    color: gray;
+}
+
+.hide{
+    display: none;
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}
