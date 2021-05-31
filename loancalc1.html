@@ -17,8 +17,8 @@
                 <div class="logo">
                     <a href="index.html"><img class="logo" src="./images/finviserr_logo.svg" alt="logo"/></a>
                 </div>
-<!-- Header Section -->
-<header>
+    <!-- Header Section -->
+    <header>
     <div class="container">
         <div>
             <h2><a href="loancalc.html">Loan Calculator</a></h2>
@@ -31,7 +31,88 @@
             </div>
 
     </div>
-</header>
+    </header>
+<!-- Loan Details Section -->
+
+<section class="loan-calc-details">
+    <div class="container">
+        <h1>Loan Calculator</h1>
+
+        <div class="loan-details">
+                <div>
+                <h2>Loan Details</h2>
+                </div>
+        <div>
+            <form class="main">
+            <div class="form-control" style="width: 100%;display: block; margin-bottom: 1.5rem;">
+                <label>What do you want to achieve?</label>
+                <select id="select1" name="select1" style="width: 100%;margin-top: 1rem;font-size: 1.1rem;padding: 3px 2px;" onchange="populate('select1','loan-amount-div','monthly-repay-div')"> 
+                    <option value="monthly-repayment">I want to know my monthly repayment</option>
+                    <option value="loan-amount">I want to know how much I can borrow</option>
+                </select>
+            </div>
+
+            <div class="form-control">
+                <label for="currency">Currency:</label>
+                <select id="currency" name="currency">
+                <option value="dollar">$ USD</option>  
+                </select>
+            </div>
+                    
+            <div class="form-control" id="loan-amount-div">
+                <label for="loan-term">Loan Amount</label>
+                <div class="options">
+                <small>Error message</small>
+                <input type="number" step="0.01" min="0" placeholder="$ 0.00" onkeyup="decimalCheck()" name="loan-amount" id="loan-amount">
+                </div>
+            </div>
+
+            <div class="form-control hide" id="monthly-repay-div">
+                <label for="loan-term">Monthly Repayment</label>
+                <div class="options">
+                <input type="number" step="0.01" min="0" placeholder="$ 0.00" onkeyup="decimalCheck()" name="monthly-repayment" id="monthly-repayment">
+                </div>
+            </div>
+
+            <div class="form-control">
+                <label for="loan-months">Loan Term in months</label>
+                <input type="number" placeholder="1" min="1" name="loan-months" id="loan-months">
+            </div>
+        
+            <div class="form-control">
+                <label for="interest-rate">Interest Rate</label>
+                <input type="number" placeholder="0.0%" name="interestRate" id="interestRate" onkeyup="decimalCheckInterest()">
+                <small style="margin-left: 22rem;">Error message</small>
+            </div>
+                    <br>
+        </div>
+        
+        <div class="loan-details">
+            <div>
+                <h2>Income</h2>
+            </div>
+            
+            <div>
+                <div class="form-control">
+                    <label for="loan-term">Monthly Net Income</label>
+                     <div class="options">
+                        <!-- <select id="loan-term" name="loan-term">
+                            <option class="monthly" value="month">Monthly</option>
+                        </select> -->
+                            <input type="number" placeholder="$ 0.0" name="month-income" id="month-income">
+                            </div>     
+                        </div>
+                        <br>
+                    <input type="submit" value="Calculate" class="btn-submit">
+                </form> 
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+
 </div>
             
 <!-- Second Grid Item -->
