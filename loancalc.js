@@ -13,7 +13,6 @@ const interestPayable = document.getElementById("interest-amount")
 const monthlyRepayOutput = document.getElementById('monthly-repay-amount-output')
 const interestPayableOutput = document.getElementById('interest-payable-amount')
 var s1 = document.getElementById('select1')
-
 var monthlyPayment;
 
 // The following function limits the loan amt to decimal places
