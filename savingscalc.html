@@ -5,26 +5,24 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/3f26f977f9.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="style.css">
+        <!-- <link rel="stylesheet" href="style.css"> -->
+        <link rel="stylesheet" href="stylesSavings.css">
         <title>Finiviserr</title>
     </head>
     <body >
-<!--Navbar  -->
-       <nav>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html"><img class="logo" src="./images/finviserr_logo.svg" alt="logo"/></a>
-            </div>
-            <div>
-                <ul class="nav-list">
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-        </nav>
-    
-<!-- Header Section -->
+     
+<div class="container">
+
+<!-- Savings Details -->
+<div class="main-grid">
+    <section class="savings-calc-details">
+        
+            
+                <div class="logo">
+                    <a href="index.html"><img class="logo" src="./images/finviserr_logo.svg" alt="logo"/></a>
+                </div>
+                
+            <!-- Header Section -->
 <header>
     <div class="container">
         <div>
@@ -33,18 +31,14 @@
             <div>
                 <h2><a href="savingscalc.html">Savings Calculator</a></h2>
             </div>
-            <div>
+            <!-- <div>
                 <h2><a href="investcalc.html">Investment Calculator</a></h2>
-            </div>
+            </div> -->
 
     </div>
 </header>
-
-<!-- Savings Details -->
-<div class="main-grid">
-    <section class="savings-calc-details">
-        <div class="container">
             <h1>Savings Calculator</h1>
+
 
             <div class="savings-details">
 
@@ -119,29 +113,39 @@
             </div>
         </section>
         
-        <section class="breakdown-grid">
-            <div class="breakdown">
-                <div class="break-title">
-                <h2>Your Breakdown</h2> 
-                </div>
-                <div class="break-details">
-                <div class="detail">
-                <p class="text">How much you should save?</p>
-                <p class="saving-interest-amount" id="saving-interest-amount">$ 0.00</p>
-                </div>
-               
-                
-                <div class="loan-results" id="loan-results">
-                    
-                </div>
-                <br>
-                <div class="detail disclaimer">
-                <p>Disclaimer: Whilst every effort has been made to ensure the accuracy of this calculator, the results should be used as indication only. They are neither a quote nor a pre-qualification for a loan.</p>
-                </div>
+        <div class="second-item">
+            <div class="navbar">
+                <ul class="nav-list" >
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                </ul>
             </div>
-        </section>
+            <section class="breakdown-grid">
+               
+                <div class="breakdown">
+                    <div class="break-title">
+                    <h2>Your Breakdown</h2> 
+                    </div>
+                    <div class="break-details">
+                    <div class="detail">
+                    <p class="text">How much you should save?</p>
+                    <p class="saving-interest-amount" id="saving-interest-amount">$ 0.00</p>
+                    </div>
+                    </div>
+                    
+                    <div class="loan-results" id="loan-results">
+                        
+                    </div>
+                    <br>
+                    <div class="detail disclaimer">
+                    <p>Disclaimer: Whilst every effort has been made to ensure the accuracy of this calculator, the results should be used as indication only. They are neither a quote nor a pre-qualification for a loan.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
 </div>
-     
+</div>
 
 <script src="savingscalc.js"></script>
 </body>

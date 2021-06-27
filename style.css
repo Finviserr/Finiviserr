@@ -32,7 +32,7 @@ img{
     max-width: 1100px;
     margin: auto;
     overflow: hidden;
-    padding: 1rem 2rem;
+    padding: 0rem 5rem -2rem;
 }
 
 nav{
@@ -368,6 +368,7 @@ border: 1px solid rgb(4, 7, 168);
     border-radius: 3px;
     padding: 12px 22px;
     margin-top: 1rem;
+    height: 50vh;
 }
 
 
