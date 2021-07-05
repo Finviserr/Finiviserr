@@ -11,6 +11,11 @@ a{
     text-decoration: none;
 }
 
+a:active,a:hover, a:current{
+    color:blue;
+    font-weight: bolder;
+}
+
 ul li{
     text-decoration: none;
     list-style: none;
@@ -20,6 +25,11 @@ ul li{
 body{
     font-family: 'IBM Plex Sans', sans-serif;
     line-height: 1.6;
+}
+
+.active-link a{
+    color:blue;
+    font-weight: bolder;
 }
 
 .container{

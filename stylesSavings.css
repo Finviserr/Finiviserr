@@ -25,9 +25,14 @@ a:hover{
     font-weight: bolder;
 }
 
+.active-link a{
+    color:blue;
+    font-weight: bolder;
+}
+
 
 .container{
-    max-width: 1200px;
+    max-width: 1500px;
     margin: auto;
     overflow: hidden;
     padding: 0rem 5rem -2rem;
@@ -37,12 +42,13 @@ a:hover{
     
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items:flex-start;
+       padding-left: 130px;
+       padding-right: 50px;
         width: 100%;
         margin-left: 0px;
-        padding-top: 2rem;
-    
-         margin-top:2rem;
+      padding-top: 2rem;
+        
 }
 
 .second-item{
@@ -89,7 +95,7 @@ header h2{
 .loan-details{
     display: flex;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 300px;
 }
 
 .loan-details h2{
@@ -142,7 +148,7 @@ border: 1px solid rgb(4, 7, 168);
     background-color: blue;
     padding: 21px 20px;
     line-height: 0.2;   
-    margin-right:-92px;
+    margin-right:-215px;
 }
 
 /* Loan Calculator -- Breakdown Grid */
@@ -156,6 +162,20 @@ border: 1px solid rgb(4, 7, 168);
     border-radius: 3px;
     padding: 12px 22px; 
     width: 100%;
+
+
+    /* /loan */
+    /* background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* width:800px; */
+   /* border-radius: 3px;
+    padding: 12px 22px;
+    margin-top: 3rem;
+    margin-left: 12px; */
     
 }
 
@@ -172,9 +192,9 @@ border: 1px solid rgb(4, 7, 168);
 
 
 .break-title{
-    margin-top:-12rem;
+    margin-top:-20rem;
     margin-bottom: 2rem;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
 
 .detail{
