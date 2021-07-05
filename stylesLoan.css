@@ -23,7 +23,7 @@ body{
 }
 
 .container{
-    max-width: 1200px;
+    max-width: 1500px;
     margin: auto;
     overflow: hidden;
     padding: 0rem 5rem -2rem;
@@ -32,23 +32,27 @@ body{
 .main-grid{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-   
+  
 
 }
 
 .first-item{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+   align-items: center;
+    justify-content: center;
     width: 100%;
-    margin-left: -42px;
+    margin-right:-3px;
+    
     padding-top: 2rem;
    
 
 }
 
-.first-item .logo{
-    margin-left: 22px;
+ .logo .container{
+
+margin-right: 334px;
+    
   
 }
 
@@ -56,6 +60,7 @@ body{
     background-color: black;
     min-height: 50vh;
     padding-top: 2rem;
+   
     width: 100%;
 }
 
