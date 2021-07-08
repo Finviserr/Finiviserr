@@ -17,7 +17,7 @@ function updateSlidePosition(){
     }
 
     slides[slidePosition].classList.add('carousel-item-visible')
-    console.log(li[slidePosition])
+    // console.log(li[slidePosition])
     li[slidePosition].classList.remove('hidden')
     li[slidePosition].classList.add('active-dot')
 }

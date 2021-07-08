@@ -75,13 +75,14 @@ margin-right: 334px;
 }
 
 .navbar{
-    width: 60%;
+    width: 28%;
     float: right;
 }
 
 .navbar ul{
     display: flex;
     justify-content:space-around;
+    cursor: pointer;
 }
 
 /* Header Section */
