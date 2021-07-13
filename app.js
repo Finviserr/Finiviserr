@@ -1,7 +1,11 @@
 let slidePosition =0;
 const slides = document.getElementsByClassName('carousel-item');
 const li = document.getElementsByClassName('dot')
-console.log(li)
+const hamburger = document.querySelector('.hamburger')
+const navMenu = document.querySelector('.nav-list')
+const navLink = document.querySelectorAll('.nav-link')
+
+// console.log(li)
 const totalSlides = slides.length;
 
 
@@ -29,18 +33,24 @@ function moveToNextSlide(){
         slidePosition++;
     } 
     updateSlidePosition();
+}
+setInterval(()=>{moveToNextSlide()},4000)
 
+// hamburger menu 
+hamburger.addEventListener('click',mobileMenu)
+
+function mobileMenu(){
+    hamburger.classList.toggle('active')
+    navMenu.classList.toggle('active')
 }
 
-// function moveToPrevSlide(){
-//     if(slidePosition === 0){
-//         slidePosition = totalSlides -1;
-//     } else {
-//         slidePosition--;
-//     }
-//     updateSlidePosition();
-// }
 
-setInterval(()=>{moveToNextSlide()},4000)
+ navLink.forEach(n => n.addEventListener('click', closeMenu));
+
+function closeMenu(){
+    console.log("closed")
+}
+
+
 
 
