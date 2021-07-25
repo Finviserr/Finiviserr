@@ -12,6 +12,8 @@ const borrowAmount = document.getElementById("borrow-amount")
 const interestPayable = document.getElementById("interest-amount")
 const monthlyRepayOutput = document.getElementById('monthly-repay-amount-output')
 const interestPayableOutput = document.getElementById('interest-payable-amount')
+const breakDownGrid = document.querySelector('.breakdown-grid')
+const close = document.getElementById('close')
 var s1 = document.getElementById('select1')
 var monthlyPayment;
 
@@ -84,6 +86,19 @@ if(s1.value === 'monthly-repayment'){
 }
 
 }
+
+calcBtn.addEventListener('click',(e)=>{
+  breakDownGrid.style.display="block";
+  close.style.display="block"
+  
+})
+
+close.addEventListener('click',()=>{
+  breakDownGrid.style.display="none"
+  console.log('clicked')
+})
+
+
 
 function displayMonthlyPayments(result,loanValue){
   console.log("Monthly Payments",resultMonthlyPayments)
