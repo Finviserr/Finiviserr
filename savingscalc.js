@@ -6,6 +6,8 @@ const savingsYears = document.getElementById('savings-duration-years');
 const savingsMonths = document.getElementById('savings-duration-months')
 const savingInterestOutput = document.getElementById('saving-interest-amount')
 const monthlyDeposit = document.getElementById("monthly-payment")
+const breakDownGrid = document.querySelector('.breakdown-grid')
+const close = document.getElementById('close')
 
 // The following function limits the savings amt to decimal places
 function decimalCheck(){
@@ -66,7 +68,20 @@ if(s1.value === 'monthly-saving-no-interest'){
 } else {
   displayResultFutureInterest(resultFuture)
 }
+
+
 });
+
+// calcBtn.addEventListener('click',(e)=>{
+//   breakDownGrid.style.display="block";
+//   console.log(breakDownGrid)
+//   // close.style.display="block"
+  
+// })
+
+// close.addEventListener('click', ()=> {
+//   breakDownGrid.style.display="none";
+// })
 
 function populate(s1,intDiv,savingsDurationDiv,savingDurMonthly,savingAmtDiv,monthlyPaymentDiv){
 var s1 = document.getElementById(s1)
